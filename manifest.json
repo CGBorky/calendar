@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Calendar",
+  "version": "1.0.2",
+  "description": "A minimalist calendar with Google Calendar integration.",
+  "permissions": ["storage", "identity"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "oauth2": {
+    "client_id": "721497496333-mclkta9uljo228oprjlt6ufhdfd3fi9n.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+}

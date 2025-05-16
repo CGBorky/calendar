@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calendar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <header>
+    <h1>Simple Calendar</h1>
+    <div id="username"></div>
+  </header>
+
+  <div class="calendar">
+    <div class="controls">
+      <button id="prev-month">&lt;</button>
+      <div id="toggle-picker">Month Year</div>
+      <button id="next-month">&gt;</button>
+      <div id="picker-wrapper">
+        <div id="month-picker"></div>
+        <div id="year-picker"></div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Sun</th>
+        </tr>
+      </thead>
+      <tbody id="calendar-body"></tbody>
+    </table>
+
+    <div class="bottom-buttons">
+      <button id="today-btn">Today</button>
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+  </div>
+
+  <div id="event-popup" class="hidden">
+    <h3>Create Event</h3>
+    <input type="text" id="event-title" placeholder="Event Title">
+    <input type="time" id="event-time">
+    <button id="event-save">Save</button>
+    <button id="event-cancel">Cancel</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

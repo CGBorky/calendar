@@ -1,0 +1,244 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  width: 300px;
+  background-color: #fff;
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#username button {
+  padding: 2px 8px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark #username button {
+  background-color: #888;
+  color: #000;
+}
+
+.calendar {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#toggle-picker {
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.dark #toggle-picker {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+#picker-wrapper {
+  display: none;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#month-picker, #year-picker {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 120px;
+  overflow-y: auto;
+  gap: 5px;
+  width: 48%;
+}
+
+#month-picker button,
+#year-picker button {
+  flex: 1 0 30%;
+  padding: 4px 0;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.dark #month-picker button,
+.dark #year-picker button {
+  background-color: #444;
+  color: #fff;
+}
+
+#month-picker button.selected,
+#year-picker button.selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th {
+  padding: 5px;
+  font-weight: bold;
+}
+
+td {
+  height: 45px;
+  width: 14.28%;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark td {
+  border-color: #444;
+}
+
+td.today {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.cell-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 14px;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ffc107;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #bbb;
+}
+
+.dark button {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark button:hover {
+  background-color: #555;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#event-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  z-index: 100;
+  width: 250px;
+}
+
+.dark #event-popup {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+#event-popup input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+}
+
+#event-popup button {
+  margin-right: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+td:hover {
+  background-color: #e0f7fa;
+}
+
+.dark td:hover {
+  background-color: #333;
+}
+
+.add-event {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 14px;
+  color: #4caf50;
+  display: none;
+}
+
+td:hover .add-event {
+  display: block;
+}
+
+.date-cell {
+  position: relative;
+}
+
+.bottom-zone {
+  display: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4caf50;
+  cursor: pointer;
+}
