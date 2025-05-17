@@ -134,7 +134,7 @@ function generateCalendar(date, events = []) {
   calendarBody.innerHTML = "";
 
   const firstJsDay = new Date(year, month, 1).getDay();
-  const firstDay = (firstJsDay + 6) % 7; 
+  const firstDay = (firstJsDay + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   let dateCount = 1;
 
@@ -143,7 +143,7 @@ function generateCalendar(date, events = []) {
 
     for (let j = 0; j < 7; j++) {
       const cell = document.createElement("td");
-      cell.classList.add("date-cell"); 
+      cell.classList.add("date-cell");
 
       if (i === 0 && j < firstDay) {
         cell.innerHTML = "";
@@ -244,19 +244,24 @@ function loadAndRenderCalendar() {
 
 function loadTheme() {
   chrome.storage.local.get("theme", (result) => {
-    if (result.theme === "dark") {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
+    const isDark = result.theme === "dark";
+    document.body.classList.toggle("dark", isDark);
+
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.textContent = isDark ? "🌙" : "🌞";
   });
 }
 
+
 function toggleTheme() {
   document.body.classList.toggle("dark");
-  const newTheme = document.body.classList.contains("dark") ? "dark" : "light";
-  chrome.storage.local.set({ theme: newTheme });
+  const isDark = document.body.classList.contains("dark");
+  chrome.storage.local.set({ theme: isDark ? "dark" : "light" });
+
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle.textContent = isDark ? "🌙" : "🌞";
 }
+
 
 function updateGreeting(name) {
   const usernameSpan = document.getElementById("username");
@@ -326,6 +331,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("theme-toggle").addEventListener("click", () => {
     toggleTheme();
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const isDark = document.body.classList.contains("dark");
+    themeToggle.textContent = isDark ? "🌙" : "🌞";
   });
 
   document.getElementById("event-cancel").addEventListener("click", () => {
