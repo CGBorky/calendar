@@ -21,7 +21,7 @@
     "128": "icon.png"
   },
   "oauth2": {
-    "client_id": "721497496333-mclkta9uljo228oprjlt6ufhdfd3fi9n.apps.googleusercontent.com",
+    "client_id": "[PRODUCT_ID]",
     "scopes": [
       "https://www.googleapis.com/auth/calendar",
       "https://www.googleapis.com/auth/userinfo.profile"
